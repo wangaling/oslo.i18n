@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 # Copyright 2012 Red Hat, Inc.
 # Copyright 2013 IBM Corp.
 # All Rights Reserved.
@@ -15,11 +17,19 @@
 #    under the License.
 """Translation support for messages in this library.
 """
-
+import oslo_i18n
 from oslo_i18n import _factory
 
 # Create the global translation functions.
-_translators = _factory.TranslatorFactory('oslo_i18n')
+_translators = _factory.TranslatorFactory(domain='myapp')
 
 # The primary translation function using the well-known name "_"
-_ = _translators.primary
+_ = _translators.primaryb 
+_C = _translators.contextual_form
+_P = _translators.plural_form
+_LI = _translators.log_info
+_LW = _translators.log_warning
+_LE = _translators.log_error
+_LI = _translators.log_critical
+
+
